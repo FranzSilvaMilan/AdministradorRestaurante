@@ -1,5 +1,6 @@
 package view;
 
+import Controller.Controller;
 import model.BranchOfficeCalama;
 import model.BranchOfficeHeroinas;
 import model.Item;
@@ -31,6 +32,7 @@ public class ConsoleRun {
     }
 
     public Order getOrder() {
+        System.out.println(order.getName() + " acaaaaaaaa" + order.getOrderDishes());
         return order;
     }
 
@@ -54,6 +56,7 @@ public class ConsoleRun {
         while (true) {
             System.out.println("Ingrese Su nombre De Reserva");
             order = new Order(scanner.nextLine());
+            System.out.println(order.getName() + " aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             System.out.println("------------ Branch Office ------------");
             System.out.println("Choose number of Branch Office");
             System.out.println("1  Branch Office Heroinas\n2  Branch Office Calama\n3  Exit");
@@ -104,7 +107,7 @@ public class ConsoleRun {
             System.out.println("------------ Add More Dishes?: ------------");
             System.out.println("1 yes 2 no");
             int answer1 = scanner.nextInt();
-            continueOrder = answer1 == 1;
+            continueOrder = answer1 == 2;
             if(continueOrder){
                 return;
             }
@@ -155,5 +158,6 @@ public class ConsoleRun {
             }
             System.out.println();
         }
+
     }
 }

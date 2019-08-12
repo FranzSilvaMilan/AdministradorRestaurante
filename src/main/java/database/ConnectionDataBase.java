@@ -41,10 +41,10 @@ public class ConnectionDataBase {
     private void init() {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:search.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:restaurant.db");
             Statement state = null;
             state = connection.createStatement();
-            state.execute("create table if not exists Order(id integer, pedidoJSON varchar(300), numeroPedido varchar(50), primary key(id));");
+            state.execute("create table if not exists OrderRestaurant(id integer, pedidoJSON varchar(300), nombrePedido varchar(50), primary key(id));");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

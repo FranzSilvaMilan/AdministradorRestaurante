@@ -34,7 +34,7 @@ public class Query {
 
     public void insertCriteria(String criteriaJSON, String nameCriterial) {
 //        String insert = "insert into criteria  values(?, ? , ?);";
-        String insert = "insert into pedido  values(?, ? , ?);";
+        String insert = "insert into orderRestaurant  values(?, ? , ?);";
         PreparedStatement pre = null;
         try {
             pre = connection.prepareStatement(insert);
@@ -53,7 +53,7 @@ public class Query {
         try {
             state = connection.createStatement();
 //            set = state.executeQuery("Select id, criteriaJSON , nameCriteria from criteria");
-            set = state.executeQuery("Select id, pedidoJSON , numeroPedido ,  from pedido");
+            set = state.executeQuery("Select id, pedidoJSON , nombrePedido from orderRestaurant");
         } catch (SQLException e) {
             e.printStackTrace();
         }
